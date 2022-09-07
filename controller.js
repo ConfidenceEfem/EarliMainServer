@@ -208,7 +208,9 @@ const createChildAccount = async (req, res) => {
       message: "Child Account Created Successfully",
       data: createChild,
     });
-  } catch (error) {}
+  } catch (error) {
+       res.status(400).json({ message: error.message });
+  }
 };
 
 const populateChildInParents = async (req, res) => {
